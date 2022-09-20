@@ -1,0 +1,20 @@
+﻿
+sodomite_crime = {
+	opinion = -60
+	imprisonment_reason = yes
+	revoke_title_reason = yes
+	banish_reason = yes
+	execute_reason = yes
+}
+
+sodomite_intolerant = {
+	opinion = -40
+	revoke_title_reason = yes
+	banish_reason = yes
+}
+
+incest_intolerant = {
+	opinion = -40
+	revoke_title_reason = yes
+	banish_reason = yes
+}

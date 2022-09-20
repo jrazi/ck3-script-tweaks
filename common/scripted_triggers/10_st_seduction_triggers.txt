@@ -1,0 +1,11 @@
+﻿
+
+guaranteed_under_20_incest_rejection_trigger = {
+	$TARGET$ = {
+		NOT = { is_consort_of = $SEDUCER$ }
+		is_close_or_extended_family_of = $SEDUCER$
+		age < 17
+		age < $SEDUCER$.age
+		is_ai = yes #Players are allowed to choose
+	}
+}

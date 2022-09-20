@@ -1,0 +1,21 @@
+﻿l_english:
+ doctrine_gender_authority_name:0 "Gender Authority Type"
+ doctrine_gender_authority_patriarchy_name:0 "Patriarchal Mandate"
+ doctrine_gender_authority_patriarchy_desc:0 "Woman, compared to other creatures, is the image of God, for she bears dominion over them. But compared unto man, she may not be called the image of God, for she bears not rule and lordship over man, but ought to obey him."
+ doctrine_gender_authority_fundamentalist_patriarchy_name:0 "Absolute Patriarchy"
+ doctrine_gender_authority_fundamentalist_patriarchy_desc:0 "Men are stronger and better equipped to lead us in this harsh and unforgiving world, so we shall entrust them with governing our society."
+ doctrine_gender_authority_equality_name:0 "Equality"
+ doctrine_gender_authority_equality_desc:0 "It is foolish to deny skilled people a role in government purely because of their gender. We shall allow all who are able to govern our society."
+ doctrine_gender_authority_matriarchy_name:0 "Matriarchal Mandate"
+ doctrine_gender_authority_matriarchy_desc:0 "In our society, women are the center of all things. Nature, we believe, has given women the ability to create; therefore it is only natural that women be in positions of power to protect this function."
+ doctrine_gender_authority_fundamentalist_matriarchy_name:0 "Absolute Matriarchy"
+ doctrine_gender_authority_fundamentalist_matriarchy_desc:0 "Women are better soldiers because they complain about pain less. They are less likely to be hit by lightning because they are not stupid enough to stand outside in a storm. They remember words and faces better. They are better spies because they are better at getting people to talk candidly."
+
+ doctrine_parameter_women_cannot_be_granted_titles_disabled:0 "Although men are prefered to rule, women can still be granted titles if the ruler desires so."
+ doctrine_parameter_male_dominated_council_disabled:0 "Women can hold council positions if the ruler desires so."
+ doctrine_parameter_combatant_must_be_male_if_no_roco_disabled:0 ""
+ doctrine_parameter_men_cannot_be_granted_titles_disabled:0 "Although women are prefered to rule, men can still be granted titles if the ruler desires so."
+ doctrine_parameter_female_dominated_council_disabled:0 "Men can hold council positions if the ruler desires so."
+ doctrine_parameter_combatant_must_be_female_if_no_roco_disabled:0 ""
+
+

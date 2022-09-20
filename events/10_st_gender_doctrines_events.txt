@@ -1,0 +1,64 @@
+﻿namespace = gender_doctrines
+
+gender_doctrines.0001 = {
+	type = empty
+	hidden = yes
+	immediate = {
+		root = {
+			faith = {
+				if = {
+					limit = {
+						has_doctrine = doctrine_gender_male_dominated
+					}
+					if = {
+						limit = {
+							NOR = {
+								has_doctrine = doctrine_gender_authority_patriarchy
+								has_doctrine = doctrine_gender_authority_fundamentalist_patriarchy
+							}
+						}
+						add_doctrine = doctrine_gender_authority_fundamentalist_patriarchy
+					}
+				}
+				else_if = {
+					limit = {
+						has_doctrine = doctrine_gender_female_dominated
+					}
+					if = {
+						limit = {
+							NOR = {
+								has_doctrine = doctrine_gender_authority_matriarchy
+								has_doctrine = doctrine_gender_authority_fundamentalist_matriarchy
+							}
+						}
+						add_doctrine = doctrine_gender_authority_fundamentalist_matriarchy
+					}
+				}
+			}
+		}
+	}
+}
+
+
+gender_doctrines.0002 = {
+	type = empty
+	hidden = yes
+	immediate = {
+		every_religion_global = {
+			every_faith = {
+				if = {
+					limit = {
+						has_doctrine = doctrine_gender_male_dominated
+					}
+					add_doctrine = doctrine_gender_authority_fundamentalist_patriarchy
+				}
+				else_if = {
+					limit = {
+						has_doctrine = doctrine_gender_female_dominated
+					}
+					add_doctrine = doctrine_gender_authority_fundamentalist_matriarchy
+				}
+			}
+		}
+	}
+}

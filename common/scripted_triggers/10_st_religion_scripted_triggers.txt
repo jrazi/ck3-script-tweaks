@@ -1,0 +1,40 @@
+﻿
+can_be_granted_titles_by = { #This is set up with trigger-ifs to allow for nice tooltip printouts in grant title interaction
+	save_temporary_scope_as = title_grantee
+	#Gender check
+	trigger_if = {
+		limit = {
+			is_ruler = no #Rulers can always get additional titles
+			is_theocratic_lessee = no #Theocratic lessees use other gender checks
+		}
+		OR = {
+			AND = {
+				is_male = yes
+				$RULER$.faith = {
+					NOT = {
+						has_doctrine_parameter = men_cannot_be_granted_titles
+					}
+				}
+			}
+			AND = {
+				is_female = yes
+				$RULER$.faith = {
+					NOT = {
+						has_doctrine_parameter = women_cannot_be_granted_titles
+					}
+				}
+			}
+		}
+
+	}
+	trigger_else_if = {
+		limit = {
+			is_theocratic_lessee = yes
+		}
+		liege = $RULER$
+		#If this is ever visible anywhere, we need to write a custom desc "Theocratic lessees cannot only be given titles by their ruler"
+	}
+	trigger_else = {
+		always = yes
+	}
+}

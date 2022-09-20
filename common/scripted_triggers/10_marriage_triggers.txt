@@ -1,0 +1,101 @@
+﻿####MARRIAGE TRIGGER LIST###
+
+#GENERAL MARRIAGE TRIGGERS
+#can_marry_common_trigger
+#can_marry_trigger
+#could_marry_character_trigger
+#can_marry_character_trigger
+#marriage_between_characters_unlocks_alliance_of_min_tier_trigger
+#can_become_concubine
+
+#MARRIAGE INTERACTION TRIGGERS
+
+#############################
+# GENERAL MARRIAGE TRIGGERS #
+#############################
+
+can_have_new_consort_trigger = {
+	trigger_if = {
+		limit = {
+			any_consort = {
+				count >= 1
+			}
+		}
+		trigger_if = {
+			limit = { is_male = yes }
+			NOT = {
+				faith = {
+					has_doctrine = doctrine_gender_female_dominated
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = { is_female = yes }
+			NOT = {
+				faith = {
+					has_doctrine = doctrine_gender_male_dominated
+				}
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+	}
+	trigger_else = {
+		always = yes
+	}
+}
+
+#Can marry right now
+can_marry_trigger = {
+	can_marry_common_trigger = yes
+	allowed_more_spouses = yes
+	can_have_new_consort_trigger = yes
+	#To account for a person marrying their concubines please use can_marry_character_trigger
+}
+
+
+make_concubine_is_shown_trigger = {
+	scope:actor = {
+		allowed_concubines = yes
+		is_adult = yes
+		can_have_new_consort_trigger = yes
+	}
+	scope:recipient = {
+		OR = {
+			is_courtier_of = scope:actor
+			is_imprisoned_by = scope:actor
+		}
+		can_become_concubine_of_character_valid_trigger = { CHARACTER = scope:actor }
+	}
+}
+
+make_concubine_is_valid_trigger = {
+	custom_description = {
+		text = take_concubine_allowed_more
+		object = scope:recipient
+		scope:actor = {
+			allowed_more_concubines = yes
+			can_have_new_consort_trigger = yes
+		}
+	}
+	scope:recipient = {
+		custom_tooltip = {
+			text = take_concubine_ex_spouse
+			NOT = {
+				has_opinion_modifier = {
+					modifier = divorced_me_opinion
+					target = scope:actor
+				}
+			}
+		}
+		is_busy_in_events_localised = yes
+		OR = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				is_married = yes
+			}
+			is_married = no
+		}
+	}
+}

@@ -1,0 +1,6 @@
+﻿
+on_game_start_after_lobby = {
+	events = {
+		gender_doctrines.0002
+	}
+}
